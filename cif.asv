@@ -1,0 +1,7 @@
+function result = cif(f,l)
+syms h t x;
+c = int(f * exp(2*1i*t),t,0,l);
+file = fopen('cifresult','a');
+result = int(c*exp(-1i*h*x)/2/pi,h);
+fprintf(file,result)
+end
